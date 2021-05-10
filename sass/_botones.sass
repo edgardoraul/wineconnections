@@ -1,0 +1,84 @@
+.boton
+	outline: none
+	background: $color_negro
+	border: none
+	border-radius: $rem * 4
+	color: $color_blanco
+	display: inline-block
+	font-family: $fuente_titulo
+	font-size: $rem
+	font-weight: 300
+	padding: ($rem / 3) ($rem * 2)
+	margin: 2px 1px
+	text-align: center
+	text-decoration: none
+	text-transform: uppercase
+
+
+	&:hover
+		background: $color_advertencia
+		color: $color_negro
+		cursor: pointer
+
+	// Tamaños extras de botones
+	&--grande
+		font-size: $rem * 1.5
+		padding: $rem ($rem * 2)
+
+	&--chico
+		font-size: $rem * 0.7
+		padding: ($rem / 2.5) ($rem * 1.25)
+	
+	&--redondo
+		align-items: center
+		border-radius: 50%
+		display: flex
+		font-size: $rem
+		font-weight: lighter !important
+		height: $rem * 2
+		justify-content: center
+		padding: 0
+		vertical-align: baseline
+		width: $rem * 2
+		&:hover
+			transform: rotate(-180deg)
+	
+
+	// Estilos de acuerdo a su funcionalidad
+	&--advertencia
+		background: $color_advertencia
+		color: $color_negro
+
+		&:hover
+			background: $color_negro
+			color: $color_advertencia
+
+	&--deshabilitado
+		background: $color_subtitulo
+		color: $color_gris
+
+		&:hover
+			background: $color_subtitulo
+			color: $color_gris
+			cursor: not-allowed
+
+	
+	&--correcto
+		background: $color_titulo
+	
+	&--blanconegro
+		color: $color_negro
+		background: $color_blanco 
+		
+		&:hover
+			background: $color_negro
+			color: $color_blanco
+	
+	&--transparente
+		background: none
+		border: 1px solid $color_negro
+		color: $color_negro
+
+		&:hover
+			background: $color_negro
+			color: $color_blanco

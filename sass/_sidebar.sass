@@ -1,0 +1,146 @@
+/** EL SIDEBAR GENERAL DE TODA LA WEBBERA **/
+.sidebar
+	padding: $rem
+
+.widget
+	&__filtro
+		@media all and ( max-width: $tablet )
+			display: none
+
+	&__header
+		&__titulo
+			color: $color_negro
+			font-family: $fuente_titulo
+			font-size: $rem * 2
+			text-transform: uppercase
+			word-spacing: -2px
+
+	&__contenido
+		position: relative
+		border-bottom: 2px solid $color_negro
+
+		&__titulo
+			align-items: center
+			color: $color_negro
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			margin: 0
+			padding: ($rem * 0.25) 0
+			text-transform: uppercase
+
+			&:hover
+				cursor: pointer
+
+			&::after
+				content: "\ea3e"
+				font-family: "icomoon"
+			
+			&--clickeado
+				&::after
+					content: "\ea3a"
+					font-family: "icomoon"
+				
+		
+		&__formulario
+			background: $color_blanco
+			display: none
+			margin: ($rem * 0.5) 0
+
+
+.formulario__input--checkbox:checked ~ .widget__contenido__formulario
+	display: block
+
+
+.widget
+	[type="checkbox"]
+		opacity: 0
+		position: absolute
+		visibility: hidden
+	
+	.opcion
+		display: inline
+		&--bloque
+			border-top: 1px dotted $color_gris
+			&:first-child
+				border-top: none
+			
+			[type="radio"]
+				opacity: 0
+				position: absolute
+				visibility: hidden
+
+			label
+				color: $color_negro
+				align-items: center
+				display: flex
+				justify-content: space-between
+				padding: ($rem * 0.5 ) 0
+				&:hover
+					cursor: pointer
+
+	.formulario__label
+		background: $color_blanco
+		border: 1px solid $color_negro
+		color: $color_negro
+		display: inline-block
+		font-family: $fuente_subtitulo
+		font-size: $rem * 0.75
+		font-weight: 600
+		padding: ($rem * 0.45) ($rem * 0.75)
+		line-height: 1
+		user-select: none
+		word-spacing: -1px
+		&:hover
+			cursor: pointer
+
+		&--radio
+			font-family: $fuente_subtitulo
+	
+	.formulario__input--checkbox:checked + .formulario__label
+		color: $color_blanco
+		background: $color_negro
+	
+	.formulario__input--radio:checked + .formulario__label--radio
+		.icomoon
+			&::before
+				content: "\ea55"
+	
+
+/** FORMULARIO DE BUSQUEDA **/
+.sidebar
+	&__searchForm
+		border: 1px solid $color_negro
+		display: flex
+		justify-content: stretch
+		align-items: stretch
+		align-content: center
+		
+		@media all and ( min-width: $tablet )
+			display: none
+			
+		&__boton
+			align-self: center
+			border-left: 1px solid $color_negro
+			color: $color_negro
+			flex: 0 0 ($rem * 3)
+			height: $rem * 3.1
+			text-align: center
+			width: $rem * 3
+
+			button
+				background: none
+				border: none
+				outline: none
+				&:hover
+					cursor: pointer
+		
+		&__input
+			flex: 1 1 auto
+
+			input[type="search"]
+				border: none
+				height: $rem * 3.1
+				margin: 0
+				width: 100%
+				padding: 0 ($rem * 0.5)

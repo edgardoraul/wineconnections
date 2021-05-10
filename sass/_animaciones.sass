@@ -1,0 +1,144 @@
+// Los sliders
+@keyframes slideOutLeft
+	0%
+		transform: translateX(0)
+
+	100%
+		transform: translateX(-100%)
+
+@keyframes slideInRight
+	0%
+		transform: translateX(100%)
+
+	100%
+		transform: translateX(0)
+
+		
+
+		
+
+// Animaciones Mixins
+@mixin animacionEstandar()
+	animation-delay: 0
+	animation-duration: 0.2s
+	animation-timing-function: ease-in-out
+	animation-fill-mode: both
+
+@mixin animacionLenta()
+	animation-delay: 0
+	animation-duration: 1s
+	animation-timing-function: ease-in-out
+	animation-fill-mode: both
+	
+@mixin fadeOutUp()
+	animation-name: fadeOutUp
+	opacity: 0
+	visibility: hidden
+	@include animacionEstandar()
+.fadeOutUp
+	@include fadeOutUp()
+	
+
+@mixin fadeOutDown()
+	animation-name: fadeOutDown
+	opacity: 0
+	visibility: hidden
+	@include animacionEstandar()
+.fadeOutDown
+	@include fadeOutDown()
+		
+
+@mixin fadeInDown()
+	animation-name: fadeInDown
+	opacity: 1
+	visibility: visible
+	@include animacionEstandar()
+.fadeInDown
+	@include fadeInDown()
+	
+
+@mixin fadeInUp()
+	animation-name: fadeInUp
+	@include animacionEstandar()
+.fadeInUp
+	@include fadeInUp()
+
+// Animaciones tipo slide
+@mixin slideInLeft()
+	animation-name: slideInLeft
+	@include animacionLenta()
+.slideInLeft
+	@include slideInLeft()
+
+@mixin slideInRight()
+	animation-name: slideInRight
+	@include animacionLenta()
+.slideInRight
+	@include slideInRight()
+
+
+@mixin slideOutLeft()
+	animation-name: slideOutLeft
+	@include animacionLenta()
+.slideOutLeft
+	@include slideOutLeft()
+
+
+@mixin slideOutRight()
+	animation-name: slideOutRight
+	@include animacionLenta()
+.slideOutRight
+	@include slideOutRight()
+
+	
+
+// Menú abierto
+@mixin abierto()
+	height: auto
+	@include fadeInDown()
+	opacity: 1
+	visibility: visible
+	z-index: 2
+
+// Menú Cerrado
+@mixin cerrado()
+	height: 0
+	@include fadeOutUp()
+	opacity: 0
+	visibility: hidden
+	z-index: -1
+
+/**  **/
+@keyframes ingDer
+	0%
+		left: 100%
+		// z-index: -1
+	10%
+		left: 100%
+		// z-index: 1
+	100%
+		left: 0
+
+@keyframes salIzq
+	0%
+		left: 0
+		// z-index: 1
+	90%
+		left: -1000px
+		// z-index: 1
+	100%
+		left: -1000px
+		// z-index: -1
+
+@mixin ingDer()
+	animation-name: ingDer
+	@include animacionLenta()
+.ingDer
+	@include ingDer()
+
+@mixin izqSal()
+	animation-name: izqSal
+	@include animacionLenta()
+.izqSal
+	@include izqSal()
+	

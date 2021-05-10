@@ -1,0 +1,29 @@
+/** Sistema de columnas y grids **/
+.grid
+	display: grid
+
+	&--espaciada
+		grid-gap: $rem
+	
+	&--semiespaciada
+		grid-gap: $rem * 0.5
+		@media all and ( min-width: $desktop )
+			grid-gap: 1%
+			grid-row-gap: $rem * 0.5
+
+	&--pagina
+		@media all and ( min-width: $tablet )
+			grid-template-areas: "header header header header" "sidebar contenido contenido contenido" "sidebar paginacion paginacion paginacion"
+
+			&__header
+				grid-area: header
+			
+			&__contenedor
+				grid-area: contenido
+			
+			&__paginacion
+				grid-area: paginacion
+
+			&__sidebar
+				grid-area: sidebar
+				width: 300px

@@ -1,0 +1,216 @@
+// Secciones del footer
+.footer
+	// Fondos de pantalla y color
+	background-color: $color_texto
+	background: rgba($color_fondo3, 0.5)
+	color: $color_blanco
+	padding: 1rem 1rem 6rem 1rem
+	position: relative
+	text-align: left
+	
+
+
+	// Sección que contiene el logo, menúes y demás cosas
+	&__menu
+		display: flex
+		flex-direction: column
+	
+
+		// Secciones del logo y un menú secundario
+		&__logo
+			align-items: center
+			align-content: space-between
+			display: flex
+			flex-direction: row
+			flex-flow: wrap
+			justify-content: center
+			@media all and ( min-width: $mobile )
+				justify-content: space-between
+			
+
+			// El logo propiamente dicho
+			&--secundario
+				background: $color_blanco
+				border-radius: 4rem
+				flex: 0 0 auto
+				flex-basis: auto
+				padding: 0.5rem 2rem
+			
+			// El submenú secundario
+			&__lista
+				display: flex
+				flex-flow: column nowrap
+				flex: 0 1 auto
+				list-style: none
+				padding: 0
+				overflow: hidden
+				flex-basis: 100%
+				@media all and ( min-width: $mobile )
+					flex-basis: 50%
+
+				@media all and ( min-width: $tablet )
+					border-radius: 4rem
+					flex-basis: auto
+					flex-flow: row nowrap
+				
+				// Los enlaces
+				&__item
+					&__enlace
+						border-bottom: 2px dotted rgba($color_blanco, 0.2)
+						color: $color_blanco
+						display: block
+						font-family: $fuente_subtitulo
+						padding: 0.5rem 1rem
+						text-transform: uppercase
+						
+						@media all and ( min-width: $tablet )
+							border-bottom: none
+							background: $color_blanco
+							color: $color_negro
+							font-size: 0.75rem
+
+						&:hover
+							background: $color_negro
+							color: $color_blanco
+
+
+
+// Contenido secundario del footer
+.footer
+	&__contenido
+		align-content: flex-start
+		align-items: baseline
+		color: $color_blanco
+		display: flex
+		justify-content: space-between
+		flex-flow: column wrap
+		min-height: 100vh
+		@media all and ( min-width: $tablet )
+			flex-flow: row wrap
+		
+		&__texto,
+		&__texto--copyright,
+		&__titulo,
+		&__sociales
+			@media all and ( min-width: $tablet )
+				flex: 1 1 40%
+
+		&__titulo
+			color: $color_advertencia
+			font-size: 4rem
+			font-family: $fuente_letra
+			font-weight: 300
+			letter-spacing: -5pt
+			line-height: 170%
+			@media all and ( min-width: $tablet )
+				max-width: 70%
+
+		&__texto
+			flex-basis: auto
+			font-family: $fuente_titulo
+			font-style: italic
+			font-size: 2rem
+			line-height: 150%
+			padding-left: 1rem
+			position: relative
+			margin-left: 2rem
+
+			&::before
+				content: "\e057"
+				font-family: "icomoon"
+				font-style: normal
+				font-weight: bolder
+				font-size: 2rem
+				left: -2rem
+				position: absolute
+				top: 0
+			&::first-letter
+				font-size: 4rem
+				vertical-align: bottom
+
+		&__texto--copyright
+			flex: 0 1 70%
+
+		&__sociales
+			&--enlace
+				display: inline-flex
+
+				&:hover
+					transform: scale(1.2)
+
+
+
+			
+
+
+// Todo el pie de página
+.footer
+	// Los botones de Acción
+	&__botonera
+		align-content: space-between
+		align-items: center
+		background: $color_advertencia
+		bottom: 0
+		box-shadow: -1px 0px 3px $color_negro
+		display: flex
+		justify-content: space-between
+		left: 0
+		position: fixed
+		letter-spacing: -1px
+		width: 100%
+		z-index: 1
+
+		&__boton
+			color: $color_negro
+			display: inline-block
+			font-family: $fuente_titulo
+			font-size: 0.75rem
+			font-weight: bolder
+			padding: 0.5rem 1rem
+			text-transform: uppercase
+
+			@media all and ( min-width: 480px)
+				font-size: 1rem
+
+			&:hover
+				color: $color_advertencia
+				background: $color_negro
+
+			&:active
+				color: $color_blanco
+				background: $color_negro
+			
+			&:focus
+				outline: 1px dotted $color_negro
+			
+			&--accion
+				@media all and ( max-width: $mobile )
+					display: none
+		
+		@media all and ( max-width: $mobile )
+			display: inline-block
+			left: auto
+			right: 0
+			background-color: rgba($color_advertencia, 0.5)
+			width: auto
+
+			&:hover
+				opacity: 1
+			
+				
+// Un fondo especial con un filtro
+.footer
+	&::after
+		background-attachment: fixed
+		background-image: url("../img/18.jpg")
+		background-position: top right
+		background-repeat: no-repeat 
+		background-size: cover
+		box-sizing: border-box
+		content: ""
+		height: 100%
+		left: 0
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: -1

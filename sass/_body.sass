@@ -1,0 +1,79 @@
+// Estilos normales a toda la web
+*
+	box-sizing: border-box
+
+html
+	scroll-behavior: smooth
+
+
+body
+	background: none
+	color: $color_texto
+	font-size: $rem
+	font-family: $fuente_letra
+	letter-spacing: -1px
+	line-height: 170%
+	text-align: center
+	word-spacing: 1px
+
+a
+	color: $color_titulo
+	text-decoration: none
+	transition: all 0.2s ease-in-out
+
+blockquote, pre, code, kbd, samp, sub, sup, small
+	font-family: $fuente_subtitulo
+	font-weight: bolder
+
+blockquote
+	font-style: italic
+	padding-left: 1rem
+	position: relative
+	border-right: ($rem * 0.5) solid $color_negro
+
+	&::before
+		color: $color_negro
+		content: "\e057"
+		font-family: "icomoon"
+		font-style: normal
+		font-weight: bolder
+		font-size: $rem * 2
+		left: - $rem * 2
+		position: absolute
+		top: 0
+
+	&::first-letter
+		font-size: 4rem
+		float: left
+		vertical-align: bottom
+
+figure
+	display: block
+	margin: 0
+	padding: 0
+
+figcaption
+	margin: 0
+	padding: 0
+	display: block
+
+em
+	font-weight: 300
+	font-style: italic
+
+
+h1, h2, h3
+	font-family: $fuente_titulo
+
+h4, h5, h6
+	font-family: $fuente_subtitulo
+
+img
+	vertical-align: top
+	width: 100%
+
+
+
+strong
+	font-weight: bold
+
