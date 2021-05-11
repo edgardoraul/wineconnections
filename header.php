@@ -39,11 +39,12 @@
 				<div class="navegacion">
 					<?php $menuPrincipal = array(
 							'container'			=>	false,
-							// 'depth'				=>	3,
+							'depth'				=>	3,
 							'menu'				=>	'header_nav',
 							'theme_location'	=>	'header_nav',
 							'items_wrap'		=>	'<ul id="header_nav" class="navegacion__lista animated ">%3$s</ul>',
-							'walker' 			=> new SH_Child_Only_Walker()
+							
+							// 'walker' 			=> new SH_Child_Only_Walker()
 						);
 						wp_nav_menu( $menuPrincipal );?>
 				</div>
@@ -51,8 +52,7 @@
 
 			<!-- Bloque botones de acción -->
 			<div class="header__boton">
-				<a href="journeys.html" class="header__boton__enlace boton boton--chico boton--advertencia">Get Start<i
-						class="separador"></i><i class="icomoon icon-arrow-right2"></i></a>
+				<a href="journeys.html" class="header__boton__enlace boton boton--chico boton--advertencia">Get Start<i	class="separador"></i><i class="icomoon icon-arrow-right2"></i></a>
 			</div>
 		</div>
 	</header>
