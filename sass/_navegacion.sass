@@ -39,11 +39,13 @@
 			width: auto
 			z-index: 1
 
-		&__item
+		
+		&__item, .menu_item
 			display: block
 			position: relative
 
-			&__enlace
+
+			.navegacion__menu__item__enlace, a
 				align-items: center
 				color: $color_negro
 				display: flex
@@ -88,6 +90,8 @@
 						margin-left: $rem / 2
 
 			// Los items activos de los menúes
+			.current-menu-item > a,
+			.current_page_item > a,
 			&--activo > &__enlace
 				color: $color_texto
 				&:before
@@ -104,7 +108,7 @@
 
 
 // Los submenúes
-.sublista
+.sublista, .submenu
 	display: block
 	@include cerrado()
 
@@ -134,7 +138,8 @@
 
 // Funcionalidad de hover y mostrar los submenúes
 @media all and ( min-width: $desktop )
-	.navegacion__lista__item:hover > .sublista
+	.navegacion__lista__item:hover > .sublista,
+	.menu-item:hover > .submenu
 		display: block
 		@include abierto()
 

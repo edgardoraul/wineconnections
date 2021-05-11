@@ -37,81 +37,15 @@
 			<!-- Bloque Oculto de la navegación -->
 			<nav class="header__nav">
 				<div class="navegacion">
-					<ul id="header_nav" class="navegacion__lista animated ">
-						<li class="navegacion__lista__item navegacion__lista__item--activo">
-							<a class="navegacion__lista__item__enlace" href="index.html">Home<i
-									class="icomoon icon-home"></i></a>
-						</li>
-						<li class="navegacion__lista__item">
-							<a class="navegacion__lista__item__enlace" href="wines.html">Wines<i
-									class="icomoon icon-wine"></i></a>
-						</li>
-						<li class="navegacion__lista__item">
-							<a class="navegacion__lista__item__enlace" href="#">Wineries<i
-									class="icomoon icon-plus"></i></a>
-
-							<!-- Submenú -->
-							<ul class="navegacion__lista sublista">
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">Winery listing</a>
-								</li>
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">List your winery <i
-											class="icomoon icon-plus"></i></a>
-
-									<!-- Sub Submenú -->
-									<ul class="navegacion__lista sublista">
-										<li class="navegacion__lista__item">
-											<a href="#" class="navegacion__lista__item__enlace">Overview</a>
-										</li>
-										<li class="navegacion__lista__item">
-											<a href="#" class="navegacion__lista__item__enlace">Set Up</a>
-										</li>
-										<li class="navegacion__lista__item">
-											<a href="#" class="navegacion__lista__item__enlace">Financials</a>
-										</li>
-										<li class="navegacion__lista__item">
-											<a href="#" class="navegacion__lista__item__enlace">Additional Services</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="navegacion__lista__item">
-							<a class="navegacion__lista__item__enlace" href="#">Who we are <i
-									class="icomoon icon-plus"></i></a>
-
-							<!-- Submenú -->
-							<ul class="navegacion__lista sublista">
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">About Us</a>
-								</li>
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">Contact Us</a>
-								</li>
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">FAQ</a>
-								</li>
-								<li class="navegacion__lista__item">
-									<a href="#" class="navegacion__lista__item__enlace">Privacy Policy</a>
-								</li>
-								<li class="navegacion__lista__item sublista__item">
-									<a href="#" class="navegacion__lista__item__enlace">Privacy Policy</a>
-								</li>
-								<li class="navegacion__lista__item sublista__item">
-									<a href="#" class="navegacion__lista__item__enlace">Terms and conditions</a>
-								</li>
-							</ul>
-						</li>
-						<li class="navegacion__lista__item">
-							<a class="navegacion__lista__item__enlace" href="#">My shop <i class="icomoon icon-cart">
-								</i></a>
-						</li>
-						<li class="navegacion__lista__item">
-							<a class="navegacion__lista__item__enlace" href="#">My account <i class="icomoon icon-user">
-								</i></a>
-						</li>
-					</ul>
+					<?php $menuPrincipal = array(
+							'container'			=>	false,
+							// 'depth'				=>	3,
+							'menu'				=>	'header_nav',
+							'theme_location'	=>	'header_nav',
+							'items_wrap'		=>	'<ul id="header_nav" class="navegacion__lista animated ">%3$s</ul>',
+							'walker' 			=> new SH_Child_Only_Walker()
+						);
+						wp_nav_menu( $menuPrincipal );?>
 				</div>
 			</nav>
 
