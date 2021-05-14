@@ -40,12 +40,12 @@
 			z-index: 1
 
 		
-		&__item, .menu_item
+		li
 			display: block
 			position: relative
 
 
-			.navegacion__menu__item__enlace, a
+			a
 				align-items: center
 				color: $color_negro
 				display: flex
@@ -89,45 +89,48 @@
 						display: inline-block
 						margin-left: $rem / 2
 
-			// Los items activos de los menúes
-			.current-menu-item > a,
-			.current_page_item > a,
-			&--activo > &__enlace
+		// Los items activos de los menúes
+		.current-menu-item,
+		.current_page_item,
+			a
 				color: $color_texto
 				&:before
 					display: none
 
 
 		// Apertura o cierre
-		&--abierto
+		&--abierto, .sub-menu--abierto
 			@include abierto()
 
-		&--cerrado
+		&--cerrado, sub-menu--cerrado
 			@include cerrado()
 
 
 
 // Los submenúes
-.sublista, .submenu
-	display: block
-	@include cerrado()
-
-	// Apertura o cierre
-	&--abierto
-		@include abierto()
-	
-	&--cerrado
+.navegacion__lista
+	.sub-menu
+		display: block
 		@include cerrado()
 
+		// Apertura o cierre
+		&--abierto
+			@include abierto()
+		
+		&--cerrado
+			@include cerrado()
 
-	// Modo escritorio
-	@media all and ( min-width: $desktop )
-		background: $color_blanco
-		display: none
-		left: 0
-		padding-left: $rem * 3 / 4
-		position: absolute
-		width: $rem * 15
+
+// Modo escritorio
+@media all and ( min-width: $desktop )
+	.navegacion__lista
+		li
+			background: $color_blanco
+			display: none
+			left: 0
+			padding-left: $rem * 3 / 4
+			position: absolute
+			width: $rem * 15
 
 		&--cerrado
 			display: none
@@ -138,10 +141,10 @@
 
 // Funcionalidad de hover y mostrar los submenúes
 @media all and ( min-width: $desktop )
-	.navegacion__lista__item:hover > .sublista,
-	.menu-item:hover > .submenu
-		display: block
-		@include abierto()
+	.navegacion__lista
+		li:hover > .sub-menu
+			display: block
+			@include abierto()
 
 
 

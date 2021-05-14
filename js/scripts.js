@@ -117,10 +117,10 @@ function cargarScripts()
 		{
 			ev.preventDefault();
 			
-			if( listadoSubMenuBoton[i].nextElementSibling.classList.contains("sublista--abierto") )
+			if( listadoSubMenuBoton[i].nextElementSibling.classList.contains("sub-menu--abierto") )
 			{
-				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sublista--abierto");
-				listadoSubMenuBoton[i].nextElementSibling.classList.add("sublista--cerrado");
+				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--abierto");
+				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--cerrado");
 
 				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-minus"))
 				{
@@ -129,10 +129,10 @@ function cargarScripts()
 				}
 			}
 			
-			else if( listadoSubMenuBoton[i].nextElementSibling.classList.contains("sublista--cerrado") )
+			else if( listadoSubMenuBoton[i].nextElementSibling.classList.contains("sub-menu--cerrado") )
 			{
-				listadoSubMenuBoton[i].nextElementSibling.classList.add("sublista--abierto");
-				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sublista--cerrado");
+				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--abierto");
+				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--cerrado");
 				
 				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-plus"))
 				{
@@ -143,8 +143,8 @@ function cargarScripts()
 			
 			else
 			{
-				listadoSubMenuBoton[i].nextElementSibling.classList.add("sublista--abierto");
-				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sublista--cerrado");
+				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--abierto");
+				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--cerrado");
 
 				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-plus"))
 				{
