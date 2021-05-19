@@ -61,11 +61,15 @@ function cargarScripts()
 		{
 			listadoMenu.classList.add("navegacion__lista--cerrado");
 			listadoMenu.classList.remove("navegacion__lista--abierto");
+			botonMenu.children[0].classList.add("icon-menu");
+			botonMenu.children[0].classList.remove("icon-cross");
 		}
 		else
 		{
 			listadoMenu.classList.remove("navegacion__lista--cerrado");
 			listadoMenu.classList.remove("navegacion__lista--abierto");
+			botonMenu.children[0].classList.add("icon-menu");
+			botonMenu.children[0].classList.remove("icon-cross");
 		}
 	}
 
@@ -101,14 +105,15 @@ function cargarScripts()
 	/* Los submenúes secundario del menú principal ************/
 	
 	// Variable de los listados de sub menúes. Es un arreglo
-	const listadoSubMenu = document.querySelectorAll(".navegacion__lista__item__enlace + .sublista");
+	const listadoSubMenu = document.querySelectorAll("a + .sub-menu");
 	
 	// Creando botones clickeables para abrir los submenúes. Es un arreglo.
 	const listadoSubMenuBoton = [];
 	listadoSubMenu.forEach( (ev) => {
-		listadoSubMenuBoton.push( ev.previousElementSibling);
+		listadoSubMenuBoton.push( ev.previousElementSibling );
 	});
 	
+
 	// Se le asigna la propiedad de poder abrir y cerrar a cada enlace que funcionará como botón de submenú.
 	for (let i = 0; i < listadoSubMenuBoton.length; i++ )
 	{
@@ -122,11 +127,12 @@ function cargarScripts()
 				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--abierto");
 				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--cerrado");
 
-				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-minus"))
+				if(listadoSubMenuBoton[i].lastElementChild.classList.contains("dashicons-minus"))
 				{
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.add("icon-plus");
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.remove("icon-minus");
+					listadoSubMenuBoton[i].lastElementChild.classList.add("dashicons-plus");
+					listadoSubMenuBoton[i].lastElementChild.classList.remove("dashicons-minus");
 				}
+				console.log(listadoSubMenuBoton[i].lastElementChild);
 			}
 			
 			else if( listadoSubMenuBoton[i].nextElementSibling.classList.contains("sub-menu--cerrado") )
@@ -134,11 +140,12 @@ function cargarScripts()
 				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--abierto");
 				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--cerrado");
 				
-				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-plus"))
+				if(listadoSubMenuBoton[i].lastElementChild.classList.contains("dashicons-plus"))
 				{
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.add("icon-minus");
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.remove("icon-plus");
+					listadoSubMenuBoton[i].lastElementChild.classList.add("dashicons-minus");
+					listadoSubMenuBoton[i].lastElementChild.classList.remove("dashicons-plus");
 				}
+				console.log(listadoSubMenuBoton[i].lastElementChild);
 			}
 			
 			else
@@ -146,49 +153,17 @@ function cargarScripts()
 				listadoSubMenuBoton[i].nextElementSibling.classList.add("sub-menu--abierto");
 				listadoSubMenuBoton[i].nextElementSibling.classList.remove("sub-menu--cerrado");
 
-				if(listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.contains("icon-plus"))
+				if(listadoSubMenuBoton[i].lastElementChild.classList.contains("dashicons-plus"))
 				{
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.add("icon-minus");
-					listadoSubMenuBoton[i].childNodes[0].nextElementSibling.classList.remove("icon-plus");
+					listadoSubMenuBoton[i].lastElementChild.classList.add("dashicons-minus");
+					listadoSubMenuBoton[i].lastElementChild.classList.remove("dashicons-plus");
 				}
+				console.log(listadoSubMenuBoton[i].lastElementChild);
 			}
 		}
 	}
 
 
-	/* Escuchando el evento scrollTop para poder mostrar el menú principal */
-	/* window.addEventListener("scroll", mostrarMenu);
-	let lastScrollTop = 0;
-	const menuPrincipal = document.querySelector("#header");
-	const listadoMenuPrincipal = document.querySelector("#header_nav");
-	const wrapper = document.querySelector(".wrapper");
-	function mostrarMenu()
-	{
-		let st = window.pageYOffset || document.documentElement.scrollTop;
-		if( st > lastScrollTop && !listadoMenuPrincipal.classList.contains("navegacion__lista--abierto") )
-		{
-			menuPrincipal.classList.add("fadeOutUp");
-			menuPrincipal.classList.remove("fadeInDown");
-			menuPrincipal.classList.remove("fijado");
-			wrapper.classList.remove("wrapper--fixedMenu");
-		}
-		else if ( st <= lastScrollTop && listadoMenuPrincipal.classList.contains("navegacion__lista--abierto") )
-		{
-			menuPrincipal.classList.add("fadeInDown");
-			menuPrincipal.classList.add("fijado");
-			wrapper.classList.add("wrapper--fixedMenu");
-			menuPrincipal.classList.remove("fadeOutUp");
-		}
-		else
-		{
-			menuPrincipal.classList.add("fadeInDown");
-			menuPrincipal.classList.add("fijado");
-			wrapper.classList.remove("wrapper--fixedMenu");
-			menuPrincipal.classList.remove("fadeOutUp");
-		}
-		lastScrollTop = st;
-	}
- */
 
 	/* Las funciones para manipular los sliders */
 	function cargadorSlider()
@@ -394,7 +369,7 @@ function cargarScripts()
 			this.item = item;
 			this.tiempo = tiempo;
 			this.retraso = retraso;
-			this. direccion = direccion;
+			this.direccion = direccion;
 			this.eventoTecla = eventoTecla;
 			this.eventoRaton = eventoRaton;
 		}
@@ -437,7 +412,7 @@ function cargarScripts()
 			console.log(nombreApellido);
 			
 	
-			botonSeguir.addEventListener("click", ()=>{
+			botonSeguir.addEventListener("click", () => {
 				document.querySelectorAll(".journey--oculto").forEach(element => {
 					element.classList.remove("journey--oculto");
 					element.classList.add("journey--mostrado");

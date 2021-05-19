@@ -443,9 +443,10 @@ template {
   font-weight: normal;
   font-style: normal;
   font-display: block; }
-i {
+.icomoon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: "icomoon";
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1392,9 +1393,6 @@ strong {
           right: 0;
           transition: all 0.2s ease-in-out;
           width: 0; }
-        .navegacion__lista li a i:before, .navegacion__lista li a span:before, .navegacion__lista li a .icomoon:before {
-          display: inline-block;
-          margin-left: 10px; }
     .navegacion__lista .current-menu-item a,
     .navegacion__lista .current_page_item a {
       color: #464544; }
@@ -1465,17 +1463,17 @@ strong {
     z-index: -1; }
 
 @media all and (min-width: 1000px) {
-  .navegacion__lista li {
+  .navegacion__lista .sub-menu {
     background: #fff;
     display: none;
     left: 0;
     padding-left: 15px;
     position: absolute;
     width: 300px; }
-  .navegacion__lista--cerrado {
-    display: none; }
-  .navegacion__lista--abierto {
-    display: block; } }
+    .navegacion__lista .sub-menu--cerrado {
+      display: none; }
+    .navegacion__lista .sub-menu--abierto {
+      display: block; } }
 @media all and (min-width: 1000px) {
   .navegacion__lista li:hover > .sub-menu {
     display: block;

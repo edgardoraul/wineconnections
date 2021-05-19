@@ -83,11 +83,7 @@
 					transition: all 0.2s ease-in-out
 					width: 0
 				
-				// Comportamiento de íconos
-				i, span, .icomoon
-					&:before
-						display: inline-block
-						margin-left: $rem / 2
+
 
 		// Los items activos de los menúes
 		.current-menu-item,
@@ -124,7 +120,7 @@
 // Modo escritorio
 @media all and ( min-width: $desktop )
 	.navegacion__lista
-		li
+		.sub-menu
 			background: $color_blanco
 			display: none
 			left: 0
@@ -132,11 +128,11 @@
 			position: absolute
 			width: $rem * 15
 
-		&--cerrado
-			display: none
-		
-		&--abierto
-			display: block
+			&--cerrado
+				display: none
+			
+			&--abierto
+				display: block
 
 
 // Funcionalidad de hover y mostrar los submenúes
