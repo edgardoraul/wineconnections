@@ -10,6 +10,8 @@ require_once "includes/remover_innecesarias.php";
 require_once "includes/login_personalizado.php";
 require_once "includes/admin_footer_personalizado.php";
 require_once "includes/sitemap.php";
+require_once "includes/tinymce.php";
+require_once "includes/campos_usuario.php";
 // require_once "includes/minificacion.php";
 
 /********* FUNCIONES GENERALES DE LA PLANTILLA *******/
@@ -44,5 +46,70 @@ register_nav_menus ( array(
 	)
 );
 
+// Soporte para html5
+function soporte_html5()
+{
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+}
+add_action( 'after_setup_theme', 'soporte_html5' );
+
+
+// Ready for i18n
+load_theme_textdomain( "wineconnections", TEMPLATEPATH . "/languages");
+
+// Add default posts and comments RSS feed links to head.
+add_theme_support( 'automatic-feed-links' );
+
+// Let WordPress manage the document title
+add_theme_support( 'title-tag' );
+
+// Habilitar un logo personalizado y su texto
+add_theme_support( 'custom-logo', array(
+	'height'				=> 200,
+	'width'					=> 400,
+	'flex-height'			=> true,
+	'flex-width'			=> true,
+	'header-text'			=> array( 'site-title', 'site-description' ),
+	)
+);
+
+// Habilitar un header personlizado
+$defaults1 = array(
+    'default-image'          => '',
+    'random-default'         => false,
+    'width'                  => 0,
+    'height'                 => 0,
+    'flex-height'            => false,
+    'flex-width'             => false,
+    'default-text-color'     => '',
+    'header-text'            => true,
+    'uploads'                => true,
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+    'video'                  => false,
+    'video-active-callback'  => 'is_front_page',
+);
+add_theme_support( 'custom-header', $defaults1 );
+
+
+// Habilitar un fondos personalizados
+$defaults2 = array(
+    'default-image'          => '',
+    'default-preset'         => 'fit',			// 'default', 'fill', 'fit', 'repeat', 'custom'
+    'default-position-x'     => 'center',		// 'left', 'center', 'right'
+    'default-position-y'     => 'center',		// 'top', 'center', 'bottom'
+    'default-size'           => 'cover',		// 'auto', 'contain', 'cover'
+    'default-repeat'         => 'no-repeat',	// 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
+    'default-attachment'     => 'scroll',		// 'scroll', 'fixed'
+    'default-color'          => '',
+    'wp-head-callback'       => '_custom_background_cb',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-background', $defaults2 );
+
+// Habilitar el refresco de los widgets
+add_theme_support( 'customize-selective-refresh-widgets' );
 
 ?>

@@ -72,4 +72,22 @@ function my_css_attributes_filter( $var )
 };
 
 
+// Eliminar css y scripts de comentarios cuando no hagan falta
+function clean_header()
+{
+	wp_deregister_script( 'comment-reply' );
+}
+add_action( 'init', 'clean_header', 1 );
+
+
+// Cargar scripts para comentarios solo en single.php
+function wd_single_scripts()
+{
+	if( is_singular() )
+	{
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action('wp_print_scripts', 'wd_single_scripts', 1);
+
 ?>

@@ -14,7 +14,8 @@
 	<meta name="author" content="WebModerna">
 	<?php wp_head();?>
 </head>
-<body>
+<body <?php body_class();?>>
+<?php wp_body_open(); ?>
 	<!-- El header y la barra de navegación -->
 	<header>
 		<div class="header" id="header">
