@@ -15,7 +15,6 @@
 	<?php wp_head();?>
 </head>
 <body <?php body_class();?>>
-<?php wp_body_open(); ?>
 	<!-- El header y la barra de navegación -->
 	<header>
 		<div class="header" id="header">
@@ -29,11 +28,30 @@
 
 
 			<!-- Bloque Logo -->
-			<h1 class="header__logoTexto">
-				<a href="index.html" class="header__logoTexto__enlace">
-					Wine <span class="header__logoTexto__enlace--texto">Connections</span>
-				</a>
-			</h1>
+			<?php if ( function_exists( 'the_custom_logo' ) )
+			{
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				
+				if ( has_custom_logo() )
+				{
+					echo '<h1 class="header__logoTexto">';
+					echo '<a href="'.get_bloginfo( 'url' ).'" class="header__logoTexto__enlace">';
+					echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+					echo '</a>';
+					echo '</h1>';
+				}
+				else
+				{
+					echo '<h1 class="header__logoTexto">';
+					echo '<a href="'.get_bloginfo( 'url' ).'" class="header__logoTexto__enlace">';
+					echo get_bloginfo( 'name' );
+					echo '</a>';
+					echo '</h1>';
+				}
+			};?>
+			
+
 
 			<!-- Bloque Oculto de la navegación -->
 			<nav class="header__nav">
@@ -44,8 +62,6 @@
 							'menu'				=>	'header_nav',
 							'theme_location'	=>	'header_nav',
 							'items_wrap'		=>	'<ul id="header_nav" class="navegacion__lista animated ">%3$s</ul>',
-							
-							// 'walker' 			=> new SH_Child_Only_Walker()
 						);
 						wp_nav_menu( $menuPrincipal );?>
 				</div>

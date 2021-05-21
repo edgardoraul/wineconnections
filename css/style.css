@@ -1910,7 +1910,7 @@ strong {
         .footer__menu__logo {
           justify-content: space-between; } }
       .footer__menu__logo--secundario {
-        background: #fff;
+        background: #040507;
         border-radius: 4rem;
         flex: 0 0 auto;
         flex-basis: auto;
@@ -1931,7 +1931,7 @@ strong {
             border-radius: 4rem;
             flex-basis: auto;
             flex-flow: row nowrap; } }
-        .footer__menu__logo__lista__item__enlace {
+        .footer__menu__logo__lista__item__enlace, .footer__menu__logo__lista__item a, .footer__menu__logo__lista li__enlace, .footer__menu__logo__lista li a {
           border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
           color: #fff;
           display: block;
@@ -1939,12 +1939,12 @@ strong {
           padding: 0.5rem 1rem;
           text-transform: uppercase; }
           @media all and (min-width: 720px) {
-            .footer__menu__logo__lista__item__enlace {
+            .footer__menu__logo__lista__item__enlace, .footer__menu__logo__lista__item a, .footer__menu__logo__lista li__enlace, .footer__menu__logo__lista li a {
               border-bottom: none;
               background: #fff;
               color: #040507;
               font-size: 0.75rem; } }
-          .footer__menu__logo__lista__item__enlace:hover {
+          .footer__menu__logo__lista__item__enlace:hover, .footer__menu__logo__lista__item a:hover, .footer__menu__logo__lista li__enlace:hover, .footer__menu__logo__lista li a:hover {
             background: #040507;
             color: #fff; }
 

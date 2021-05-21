@@ -9,26 +9,31 @@
 
 					<!-- Bloque Logo -->
 					<div class="header__logoTexto footer__menu__logo--secundario">
-						<a href="#" class="header__logoTexto__enlace">
-							Wine <span class="header__logoTexto__enlace--texto">Connections</span>
-						</a>
+						<?php if ( function_exists( 'the_custom_logo' ) ) {
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+							$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+							
+							if ( has_custom_logo() ) {
+								echo '<a href="'.get_bloginfo( 'url' ).'" class="header__logoTexto__enlace">';
+								echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+								echo '</a>';
+							} else {
+								echo '<a href="'.get_bloginfo( 'url' ).'" class="header__logoTexto__enlace">';
+								echo get_bloginfo( 'name' );
+								echo '</a>';
+							}
+						};?>
 					</div>
 
 					<!-- menu secundario -->
-					<ul class="footer__menu__logo__lista">
-						<li class="footer__menu__logo__lista__item footer__menu__logo__lista__item--activo">
-							<a href="#" class="footer__menu__logo__lista__item__enlace">FAQs</a>
-						</li>
-						<li class="footer__menu__logo__lista__item">
-							<a href="#" class="footer__menu__logo__lista__item__enlace">Contact Us</a>
-						</li>
-						<li class="footer__menu__logo__lista__item">
-							<a href="#" class="footer__menu__logo__lista__item__enlace">Shipping Info</a>
-						</li>
-						<li class="footer__menu__logo__lista__item">
-							<a href="#" class="footer__menu__logo__lista__item__enlace">Terms and Conditions</a>
-						</li>
-					</ul>
+					<?php $menuPrincipal = array(
+						'container'			=>	false,
+						'depth'				=>	3,
+						'menu'				=>	'footer_nav',
+						'theme_location'	=>	'footer_nav',
+						'items_wrap'		=>	'<ul id="footer_nav" class="footer__menu__logo__lista">%3$s</ul>',
+					);
+					wp_nav_menu( $menuPrincipal );?>
 				</div>
 
 				<!-- contenido secundario -->
@@ -42,22 +47,18 @@
 							aliquid officia aliquam corporis illum! Commodi?.</p>
 					</div>
 					<div class="footer__contenido__texto--copyright">
-						<p>© Wine Contections. All rights reserved.</p>
-						<p>Realizado por <a href="//globaldevelopment.com.ar" target="_blank"
-								title="Global Development">Global Development</a></p>
+						<p>© <?php bloginfo('name'); _e(' . Todos los derechos reservados.', 'wineconnections');?></p>
+						<p><?php _e('Realizado por ', 'wineconnections');?><a href="//globaldevelopment.com.ar" target="_blank" title="Global Development">Global Development</a></p>
 					</div>
 
 
 					<!-- redes sociales -->
 					<div class="footer__contenido__sociales">
-						<div><strong>Decí "hola"</strong></div>
-						<div>info@meloinvento.com
-						</div>
-						<a href="#" class="footer__contenido__sociales--enlace"><i
-								class="icomoon icon-facebook"></i></a>
+						<div><strong><?php _e('Decí "hola"', 'wineconnections');?></strong></div>
+						<div>info@meloinvento.com</div>
+						<a href="#" class="footer__contenido__sociales--enlace"><i class="icomoon icon-facebook"></i></a>
 						<a href="#" class="footer__contenido__sociales--enlace"><i class="icomoon icon-twitter"></i></a>
-						<a href="#" class="footer__contenido__sociales--enlace"><i
-								class="icomoon icon-whatsapp"></i></a>
+						<a href="#" class="footer__contenido__sociales--enlace"><i class="icomoon icon-whatsapp"></i></a>
 						<a href="#" class="footer__contenido__sociales--enlace"><i class="icomoon icon-gmail"></i></a>
 						<a href="#" class="footer__contenido__sociales--enlace"><i class="icomoon icon-youtube"></i></a>
 					</div>
