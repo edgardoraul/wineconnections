@@ -1,4 +1,9 @@
 <?php
+// Remover versión del WordPress
+function remove_wp_version() { return ''; };
+add_filter( 'the_generator', 'remove_wp_version' );
+
+
 // Los odiosos emojies
 function disable_emojis()
 {
@@ -25,7 +30,7 @@ function disable_embeds_code_init()
 	add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 	remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
 }
-add_action( 'init', 'disable_embeds_code_init', 9999 );
+add_action( 'init', 'disable_embeds_code_init', 999 );
 
 function disable_embeds_tiny_mce_plugin($plugins)
 {
