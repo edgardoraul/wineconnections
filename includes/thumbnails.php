@@ -1,7 +1,7 @@
 <?php
 // Brindando soporte de imágenes y miniaturas a la web
 // Definir tamaños personalizados de miniaturas - hay que configurarlas
-add_theme_support('post-thumbnails', array( 'post', 'page' ));
+add_theme_support('post-thumbnails', array( 'post', 'page', 'post_type_journey', 'post_type_panel', 'post_type_num_pasos' ));
 
 // Las thumbnails por defecto
 the_post_thumbnail( 'thumbnail' );

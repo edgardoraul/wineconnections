@@ -416,6 +416,11 @@ template {
 .clearboth,
 .separador {
   clear: both; }
+  .clearboth::before, .clearboth::after,
+  .separador::before,
+  .separador::after {
+    content: "";
+    display: table; }
 
 .separador {
   padding: 0 0.25rem;
@@ -1153,16 +1158,22 @@ strong {
   font-weight: bold; }
 
 .granTitular {
-  margin: 60px auto; }
+  margin-top: 60px;
+  margin-bottom: 160px;
+  margin-left: auto;
+  margin-right: auto; }
   .granTitular__header__titulo {
     color: #040507;
     font-family: "Poppins";
     font-weight: 900;
-    font-size: 60px;
+    font-size: 40px;
     letter-spacing: -2px;
     line-height: 150%;
     margin: 0;
     text-transform: uppercase; }
+    @media all and (min-width: 500px) {
+      .granTitular__header__titulo {
+        font-size: 60px; } }
 
 .boton {
   outline: none;
@@ -1578,7 +1589,7 @@ strong {
             letter-spacing: -5px; }
 
 /**
- * Sección 2: Contienen cuadros que ocupan toda la pantalla.
+ * Sección 3: Contienen cuadros que ocupan toda la pantalla.
  * Están divididos a la mitad e intercambiados a medida que son pares o impares respectivamente.
  * En una parte tienen color y en la otra mitad están con alguna imagen de fondo.
  * Además poseen un titular en el centro.
@@ -1608,7 +1619,8 @@ strong {
         position: absolute;
         top: 0;
         width: 100%; }
-      .main__seccion2__articulo__figure__imagen {
+      .main__seccion2__articulo__figure__imagen,
+      .main__seccion2__articulo__figure img {
         display: block;
         height: 100vh;
         object-fit: cover;
@@ -1640,13 +1652,13 @@ strong {
   order: 2; }
 
 /**
- * Sección 3: Cuadros con números de orden, encabezado, imagen y texto.
+ * Sección 2: Cuadros con números de orden, encabezado, imagen y texto.
  *
  */
 .pasos {
   display: grid;
   grid-gap: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 50vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -1676,8 +1688,10 @@ strong {
       line-height: 100%;
       padding-right: 40px;
       vertical-align: bottom; }
-    .main__seccion3__articulo__media__imagen {
-      display: table-cell; }
+    .main__seccion3__articulo__media__imagen,
+    .main__seccion3__articulo__media img {
+      display: table-cell;
+      height: auto; }
   .main__seccion3__articulo__header__titulo {
     font-family: "Poppins";
     font-size: 30px;
@@ -2413,5 +2427,131 @@ strong {
  *
  * 	height: 100%
  * 	* */
+.glider-contain {
+  width: 100%;
+  margin: 0 auto;
+  position: relative; }
+
+.glider {
+  margin: 0 auto;
+  position: relative;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  transform: translateZ(0); }
+
+.glider-track {
+  transform: translateZ(0);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  z-index: 1; }
+
+.glider.draggable {
+  user-select: none;
+  cursor: -webkit-grab;
+  cursor: grab; }
+
+.glider.draggable .glider-slide img {
+  user-select: none;
+  pointer-events: none; }
+
+.glider.drag {
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
+
+.glider-slide {
+  user-select: none;
+  justify-content: center;
+  align-content: center;
+  width: 100%; }
+
+.glider-slide img {
+  max-width: 100%; }
+
+.glider::-webkit-scrollbar {
+  opacity: 0;
+  height: 0; }
+
+.glider-prev, .glider-next {
+  user-select: none;
+  position: absolute;
+  outline: none;
+  background: none;
+  padding: 0;
+  z-index: 2;
+  font-size: 40px;
+  text-decoration: none;
+  left: -23px;
+  border: 0;
+  top: 30%;
+  cursor: pointer;
+  color: #666;
+  opacity: 1;
+  line-height: 1;
+  transition: opacity 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67), color 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+
+.glider-prev:hover,
+.glider-next:hover,
+.glider-prev:focus,
+.glider-next:focus {
+  color: #a89cc8; }
+
+.glider-next {
+  right: -23px;
+  left: auto; }
+
+.glider-next.disabled,
+.glider-prev.disabled {
+  opacity: .25;
+  color: #666;
+  cursor: default; }
+
+.glider-slide {
+  min-width: 150px; }
+
+.glider-hide {
+  opacity: 0; }
+
+.glider-dots {
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0; }
+
+.glider-dot {
+  border: 0;
+  padding: 0;
+  user-select: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  color: #ccc;
+  border-radius: 999px;
+  background: #ccc;
+  width: 12px;
+  height: 12px;
+  margin: 7px; }
+
+.glider-dot:hover,
+.glider-dot:focus,
+.glider-dot.active {
+  background: #a89cc8; }
+
+@media (max-width: 36em) {
+  .glider::-webkit-scrollbar {
+    opacity: 1;
+    -webkit-appearance: none;
+    width: 7px;
+    height: 3px; }
+
+  .glider::-webkit-scrollbar-thumb {
+    opacity: 1;
+    border-radius: 99px;
+    background-color: rgba(156, 156, 156, 0.25);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25); } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,15 @@
-<?php get_header();?>
+<?php
+/**
+* page.php
+* @package WordPress
+* @subpackage wineconections
+* @since wineconections 1.0
+* Text Domain: wineconections
+*/
+// Exit if accessed directly
+defined( 'ABSPATH' ) or die( __("Nada de brutos aquí!", "wineconections") );
+
+get_header();?>
 
 	<main>
 		<div class="main grid grid--pagina">

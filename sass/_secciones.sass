@@ -64,7 +64,7 @@
 
 
 /**
-	Sección 2: Contienen cuadros que ocupan toda la pantalla.
+	Sección 3: Contienen cuadros que ocupan toda la pantalla.
 	Están divididos a la mitad e intercambiados a medida que son pares o impares respectivamente.
 	En una parte tienen color y en la otra mitad están con alguna imagen de fondo.
 	Además poseen un titular en el centro.
@@ -99,7 +99,8 @@
 					width: 100%
 					
 
-				&__imagen
+				&__imagen,
+				img
 					display: block
 					height: 100vh
 					object-fit: cover
@@ -140,14 +141,14 @@
 
 
 /**
-	Sección 3: Cuadros con números de orden, encabezado, imagen y texto.
+	Sección 2: Cuadros con números de orden, encabezado, imagen y texto.
 
 	**/
 // Contenedor de las secciones de los pasos
 .pasos
 	display: grid
 	grid-gap: $rem
-	margin-bottom: $rem * 4
+	margin-bottom: 50vh
 	margin-left: auto
 	margin-right: auto
 	margin-top: $rem
@@ -180,8 +181,10 @@
 				padding-right: $rem * 2
 				vertical-align: bottom
 				
-			&__imagen
+			&__imagen,
+			img
 				display: table-cell
+				height: auto
 
 		&__header
 			&__titulo
