@@ -1550,7 +1550,10 @@ strong {
   text-align: left; }
   .main__seccion1__articulo {
     align-items: center;
-    background: #FE9776 url("../img/13.jpg") top left no-repeat;
+    background-image: url("../img/13.jpg");
+    background-color: #FE9776;
+    background-position: top left;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

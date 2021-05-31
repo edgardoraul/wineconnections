@@ -15,18 +15,32 @@ $args = array(
 
 
 // The Query
-$query_custom_post_type_principales = new WP_Query( $args );?>
+$query_custom_post_type_principales = new WP_Query( $args );
+
+?>
 
 <!-- LAS SECCIONES PRINCIPALES -->
 <section>
 	<div class="main__seccion1 izquierda">
-
-<?php // The Loop
+		
+		<?php // The Loop
 if ( $query_custom_post_type_principales->have_posts() ) {
 	while ( $query_custom_post_type_principales->have_posts() ) {
 		$query_custom_post_type_principales->the_post();
-		// do something ?>
-	<article class="main__seccion1__articulo" id="<?php echo 'seccion-principal-'.get_the_ID();?>" name="<?php echo 'seccion-principal-'.get_the_ID();?>">
+		$imagen = get_the_post_thumbnail_url( get_the_ID(), 'custom-thumb-600-x' );
+		$next_post = get_next_post();
+		$next_post_id = "";
+		if ( is_a( $next_post , 'WP_Post' ) )
+		{
+			$next_post_id = $next_post->ID;
+		} else {
+			$next_post_id = get_the_ID();
+		}
+		// do something
+	
+	
+	?>
+	<article style="background-image: url('<?php echo $imagen;?>');" class="main__seccion1__articulo" id="<?php echo get_the_ID();?>" name="<?php echo get_the_ID();?>">
 		<div class="main__seccion1__articulo__contenedor">
 			<header class="main__seccion1__articulo__contenedor__header">
 				<h2 class="main__seccion1__articulo__contenedor__header--titulo">
@@ -37,8 +51,11 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 			<?php echo get_the_content();?>
 			</div>
 			<div class="main__seccion1__articulo__contenedor__accion">
-				<a href="#2" class="boton">Get Journeys<i class="separador"> </i>
-				<i class="icomoon icon-forward"> </i></a>
+				<a href="#<?php echo $next_post_id;?>" class="boton">
+					<?php _e('Siguiente ', 'wineconnections');?>
+					<i class="separador"></i>
+					<i class="icomoon icon-forward"></i>
+				</a>
 			</div>
 		</div>
 	</article>
