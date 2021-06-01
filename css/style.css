@@ -1572,7 +1572,8 @@ strong {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
-      max-width: 90%; }
+      max-width: 90%;
+      width: 100%; }
       @media all and (min-width: 720px) {
         .main__seccion1__articulo__contenedor {
           max-width: 500px; } }
