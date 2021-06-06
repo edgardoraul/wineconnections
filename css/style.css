@@ -1151,6 +1151,7 @@ h4, h5, h6 {
   font-family: "Roboto"; }
 
 img {
+  height: auto;
   vertical-align: top;
   width: 100%; }
 

@@ -3,16 +3,17 @@
 	* FUNCIONES GENERALES DE LA PLANTILLA
 	* Se incluyen cada grupo de funcionalidades en archivos diferentes.
 */
-require_once "includes/favicon.php";
-require_once "includes/thumbnails.php";
-require_once "includes/remover_paneles.php";
-require_once "includes/remover_innecesarias.php";
-require_once "includes/login_personalizado.php";
-require_once "includes/admin_footer_personalizado.php";
-require_once "includes/sitemap.php";
-require_once "includes/tinymce.php";
-require_once "includes/campos_usuario.php";
-// require_once "includes/minificacion.php";
+include "includes/favicon.php";
+include "includes/thumbnails.php";
+include "includes/remover_paneles.php";
+include "includes/remover_innecesarias.php";
+include "includes/login_personalizado.php";
+include "includes/admin_footer_personalizado.php";
+include "includes/sitemap.php";
+include "includes/tinymce.php";
+include "includes/campos_usuario.php";
+include "includes/sidebar.php";
+// include "includes/minificacion.php";
 
 /********* FUNCIONES GENERALES DE LA PLANTILLA *******/
 // Agregando las fuentes de Google
