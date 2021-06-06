@@ -1,6 +1,6 @@
 <?php
 /**
-* page.php
+* category.php
 * @package WordPress
 * @subpackage wineconections
 * @since wineconections 1.0
@@ -19,16 +19,25 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
 			<div class="contenedor__seccion contenedor_cards grid grid--semiespaciada">
 				<article>
-					<?php
-					if( has_post_thumbnail() )
-					{
-						the_post_thumbnail('custom-thumb-900-333');
-					}
-					else
-					{
-						echo '<img src="'.get_bloginfo('stylesheet_directory').'/img/17.jpg" alt="alt"/>';
-					}
-					the_content();?>
+					<div>
+						<div>
+							<?php
+							if( has_post_thumbnail() )
+							{
+								the_post_thumbnail('custom-thumb-200-200');
+							}
+							else
+							{
+								echo '<img src="'.get_bloginfo('stylesheet_directory').'/img/17.jpg" alt="alt"/>';
+							};?>
+						</div>
+						<div>
+							<div>
+								<header><h4><?php the_title();?></h4></header>
+							</div>
+							<div></div>
+						</div>
+					</div>
 				</article>
 			</div>
 		</section>
