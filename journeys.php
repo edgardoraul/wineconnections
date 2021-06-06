@@ -13,10 +13,23 @@ defined( 'ABSPATH' ) or die( __("Nada de brutos aquí!", "wineconections") );
 get_header();
 get_sidebar();
 
-if ( have_posts() ) : while ( have_posts() ) : the_post();
-endwhile;
-else: _e("No hay nada", 'wineconections');
-endif;
+/* Clases */
+class User
+{
+	public $type;
+}
+class Admin
+{
+	public function greet()
+	{
+		return "Hola Administrador";
+	}
+}
+$user = new User;
+$user->type = new Admin;
+echo $user->type->greet();
 
+
+/* ************** */
 get_footer();
 ?>
