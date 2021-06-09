@@ -2,11 +2,26 @@
 
 			<!-- El título principal de la página -->
 			<header class="encabezado grid--pagina__header">
-				<h1 class="encabezado__titulo"><?php the_title();?></h1>
-				<form class="encabezado__formulario formulario">
+				<h1 class="encabezado__titulo"><?php
+				if(is_single())
+				{
+					the_title();
+				}
+				if(is_page())
+				{
+					the_title();
+				}
+				if(is_category())
+				{
+					the_category();
+				}
+				
+				?>
+				</h1>
+				<form class="encabezado__formulario formulario"  action="<?php echo home_url( '/' );?>" method="get" role="search">
 					<label class="formulario__label" for="search">
 						<input type="search" name="search" id="search" />
-						<button role="button" class="formulario__label__boton">
+						<button type="submit" role="button" class="formulario__label__boton">
 							<i class="icon-search1"></i>
 						</button>
 					</label>
