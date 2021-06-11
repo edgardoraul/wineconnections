@@ -1,6 +1,6 @@
 <?php
 /**
-* page.php
+* wine.php
 * @package WordPress
 * @subpackage wineconections
 * @since wineconections 1.0

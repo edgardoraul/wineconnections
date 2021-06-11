@@ -3,6 +3,7 @@
 	* FUNCIONES GENERALES DE LA PLANTILLA
 	* Se incluyen cada grupo de funcionalidades en archivos diferentes.
 */
+include "includes/options.php";
 include "includes/favicon.php";
 include "includes/thumbnails.php";
 include "includes/remover_paneles.php";
