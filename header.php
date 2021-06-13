@@ -12,7 +12,31 @@
 		}
 	?></title>
 	<meta name="author" content="WebModerna">
-	<?php wp_head();?>
+	<?php wp_head();
+	
+	/* Sirve para colocar una imagen de fondo para el pie de página */
+	if ( function_exists( 'ot_get_option' ) )
+	{
+		$background_footer = ot_get_option( 'imagen_para_usar_de_fondo', array() );
+		$longitud = count($background_footer);
+		echo $longitud;
+		for($i=0; $i < $longitud; $i++)
+		{
+			// echo $fondo[$i] = $background_footer[$i];
+		}
+		echo '<style>
+		.footer:after
+		{
+			background-attachment: '.$background_footer['repeat'].';
+			background-color: '.$fondo[0].';
+			background-image: '.$fondo[5].';
+			background-position: '.$fondo[3].';
+			background-repeat: '.$fondo[1].';
+			background-size: cover;
+		}
+		</style>';
+	}
+	?>
 </head>
 <body <?php body_class();?>>
 	<!-- El header y la barra de navegación -->
