@@ -1909,8 +1909,6 @@ strong {
       padding: 0 10px; }
 
 .footer {
-  background-color: #464544;
-  background: rgba(184, 91, 63, 0.5);
   color: #fff;
   padding: 1rem 1rem 6rem 1rem;
   position: relative;
@@ -2019,6 +2017,7 @@ strong {
     .footer__contenido__sociales--enlace:hover {
       transform: scale(1.2); }
 
+/** Todo el pie de página */
 .footer__botonera {
   align-content: space-between;
   align-items: center;
@@ -2064,20 +2063,22 @@ strong {
       .footer__botonera:hover {
         opacity: 1; } }
 
-.footer::after {
-  background-attachment: fixed;
-  background-image: url("../img/18.jpg");
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-sizing: border-box;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1; }
+.footer {
+  background-color: rgba(184, 91, 63, 0.5); }
+  .footer::after {
+    background-attachment: fixed;
+    background-image: url("../img/18.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1; }
 
 /** Reviews */
 .contenedor_reviews {

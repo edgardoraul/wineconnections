@@ -40,15 +40,57 @@
 				<div class="footer__contenido">
 
 					<!-- contenido -->
-					<h3 class="footer__contenido__titulo">Lorem ipsum dolor, sit amet consectetur adipisicing elit</h3>
+					<h3 class="footer__contenido__titulo">
+						<?php
+							if ( function_exists( 'ot_get_option' ) )
+							{
+								$titular_o_mensaje_en_el_pie_de_p_gina = ot_get_option('titular_o_mensaje_en_el_pie_de_p_gina', '');
+								echo $titular_o_mensaje_en_el_pie_de_p_gina;
+							}
+							else
+							{
+								echo "Titular aletaorio.";
+							}
+						;?>
+					</h3>
 					<div class="footer__contenido__texto  footer__contenido__texto--destacado">
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore necessitatibus sunt illo
-							veritatis id nesciunt repudiandae ex odio architecto, dicta iure molestiae, libero eius
-							aliquid officia aliquam corporis illum! Commodi?.</p>
+						<p>
+							<?php
+							if ( function_exists( 'ot_get_option' ) )
+							{
+								$p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_ = ot_get_option('p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_', '');
+								echo $p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_;
+							}
+							else
+							{
+								echo "Texto capilla aleatorio.";
+							}
+							;?>
+						</p>
 					</div>
+
 					<div class="footer__contenido__texto--copyright">
-						<p>© <?php bloginfo('name'); _e(' . Todos los derechos reservados.', 'wineconnections');?></p>
-						<p><?php _e('Realizado por ', 'wineconnections');?><a href="//globaldevelopment.com.ar" target="_blank" title="Global Development">Global Development</a></p>
+					<?php
+						if ( function_exists( 'ot_get_option' ) )
+						{
+							$direcci_n_o_ubicaci_n_de_la_empresa = ot_get_option('direcci_n_o_ubicaci_n_de_la_empresa', '');
+							if($direcci_n_o_ubicaci_n_de_la_empresa != "")
+							{
+								echo $direcci_n_o_ubicaci_n_de_la_empresa;
+							}
+						}
+						else
+						{
+							echo "Texto capilla aleatorio.";
+						}
+						;?>
+					</div>
+
+					<div class="footer__contenido__texto--copyright">
+						<p>© <?php echo the_date("Y"); echo " "; bloginfo('name'); _e(' . Todos los derechos reservados.', 'wineconnections');?></p>
+						<p>
+							<?php _e('Realizado por ', 'wineconnections');?><a href="//globaldevelopment.com.ar" target="_blank" title="Global Development">Global Development</a>
+						</p>
 					</div>
 
 

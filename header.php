@@ -17,24 +17,46 @@
 	/* Sirve para colocar una imagen de fondo para el pie de página */
 	if ( function_exists( 'ot_get_option' ) )
 	{
-		$background_footer = ot_get_option( 'imagen_para_usar_de_fondo', array() );
-		$longitud = count($background_footer);
-		echo $longitud;
-		for($i=0; $i < $longitud; $i++)
+		$background_footer = ot_get_option( 'imagen_para_usar_de_fondo' , array('ot_recognized_background_repeat'));
+		if($background_footer != "")
 		{
-			// echo $fondo[$i] = $background_footer[$i];
-		}
-		echo '<style>
-		.footer:after
+			$i = 0;
+			$back = array('background-color: ', 'background-repeat: ', 'background-attachment: ', 'background-position: ', 'background-size: ', 'background-image: url("');
+			echo '<style>
+			.footer:after
+			{
+			';
+			
+			foreach($background_footer as $item)
+			{
+				$arreglo[$i] = $item;
+				echo $back[$i] . $item;
+				if($i+1 == count( $background_footer) )
+				{
+					echo '"); ';
+				}
+				else
+				{
+					echo '; ';
+				}
+				echo "\n";
+				$i++;
+			}
+			echo '
+			}';
+		
+		$transparencia_y_color_para_el_fondo_del_pie_de_p_gina = ot_get_option('transparencia_y_color_para_el_fondo_del_pie_de_p_gina');
+		if($transparencia_y_color_para_el_fondo_del_pie_de_p_gina != "")
 		{
-			background-attachment: '.$background_footer['repeat'].';
-			background-color: '.$fondo[0].';
-			background-image: '.$fondo[5].';
-			background-position: '.$fondo[3].';
-			background-repeat: '.$fondo[1].';
-			background-size: cover;
+			echo '
+			.footer {
+				background-color: '.$transparencia_y_color_para_el_fondo_del_pie_de_p_gina.';
+			}
+			';
 		}
-		</style>';
+		
+		echo '</style>';
+		}
 	}
 	?>
 </head>
