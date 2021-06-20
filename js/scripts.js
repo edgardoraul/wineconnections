@@ -361,46 +361,6 @@ function cargarScripts()
 	}
 
 
-	/* FUNCION DEL TODOS LOS SLIDER DE FORMA GENERAL */
-	class sliderClase
-	{
-		constructor(id, estilo, cantidad, item, tiempo, retraso, direccion, eventoTecla, eventoRaton)
-		{
-			this.id = id;
-			this.estilo = estilo;
-			this.cantidad = cantidad;
-			this.item = item;
-			this.tiempo = tiempo;
-			this.retraso = retraso;
-			this.direccion = direccion;
-			this.eventoTecla = eventoTecla;
-			this.eventoRaton = eventoRaton;
-		}
-	}
-	
-	// Variables necesarias para identificar los sliders
-	let slidersGrupos = document.querySelectorAll(".slider-container");
-	let sliderGrupo = [];
-	if( slidersGrupos.length > 0)
-	{
-		for(let i = 0; slidersGrupos.length > i; i++)
-		{
-			sliderGrupo[i] = new sliderClase(
-				i,
-				slidersGrupos[i].dataset.estilo,
-				slidersGrupos[i].children.length,
-				slidersGrupos[i].children,
-				slidersGrupos[i].dataset.tiempo,
-				slidersGrupos[i].dataset.retraso,
-				slidersGrupos[i].dataset.direccion,
-				slidersGrupos[i].dataset.eventoTecla,
-				slidersGrupos[i].dataset.eventoRaton
-			);
-			console.log(sliderGrupo[i].item, sliderGrupo[i].retraso);
-		}
-	}
-
-
 	/* EL FORMULARIO DE PRESENTACION DE LOS JOURNEYS */
 	let nombreApellido;
 	const nombrecito = document.querySelector("#nombrecito");
@@ -426,4 +386,22 @@ function cargarScripts()
 			}, false);
 		}, false);
 	}
+
+
+
+
+
+	/* El desarrollo y activación de los sliders */
+	/* const elms = document.getElementsByClassName( 'splide' );
+	for ( var i = 0, len = elms.length; i < len; i++ )
+	{
+		new Splide( elms[ i ] ).mount();
+		console.log(elms[ i ]);
+	} */
+	new Splide( '#splide1', {
+		type   : 'loop',
+		perPage: 3,
+		autoplay: true,
+		interval: 1000
+	} );
 }

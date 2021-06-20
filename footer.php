@@ -45,11 +45,14 @@
 							if ( function_exists( 'ot_get_option' ) )
 							{
 								$titular_o_mensaje_en_el_pie_de_p_gina = ot_get_option('titular_o_mensaje_en_el_pie_de_p_gina', '');
-								echo $titular_o_mensaje_en_el_pie_de_p_gina;
-							}
-							else
-							{
-								echo "Titular aletaorio.";
+								if($titular_o_mensaje_en_el_pie_de_p_gina != "")
+								{
+									echo $titular_o_mensaje_en_el_pie_de_p_gina;
+								}
+								else
+								{
+									echo "Titular aletaorio.";
+								}
 							}
 						;?>
 					</h3>
@@ -59,11 +62,14 @@
 							if ( function_exists( 'ot_get_option' ) )
 							{
 								$p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_ = ot_get_option('p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_', '');
-								echo $p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_;
-							}
-							else
-							{
-								echo "Texto capilla aleatorio.";
+								if($p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_ != "")
+								{
+									echo $p_rrajo_o_lema_para_colocar_en_el_pi__de_la_p_gina_web_;
+								}
+								else
+								{
+									echo "Texto capilla aleatorio.";
+								}
 							}
 							;?>
 						</p>
@@ -78,10 +84,10 @@
 							{
 								echo $direcci_n_o_ubicaci_n_de_la_empresa;
 							}
-						}
-						else
-						{
-							echo "Texto capilla aleatorio.";
+							else
+							{
+								echo "Texto capilla aleatorio.";
+							}
 						}
 						;?>
 					</div>

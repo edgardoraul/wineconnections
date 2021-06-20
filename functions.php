@@ -28,11 +28,28 @@ add_action( 'wp_head', function()
 // Cargando estilos y scripts de la manera correcta
 function losScripts()
 {
+	// Script de los sliders
+	wp_register_script( 'script_slider', get_template_directory_uri() . '/js/splide/dist/js/splide.min.js', '', '1.0.0', true);
+	wp_enqueue_script( 'script_slider' );
+	
+	// Scripts general de la web
 	wp_register_script( 'script_base', get_template_directory_uri() . '/js/scripts.js', '', '1.0.0', true);
 	wp_enqueue_script( 'script_base' );
-
+	
+	
+	// Estilos de la web
 	wp_register_style( 'estilos_base', get_template_directory_uri() . '/css/style.css', true, '1.0.0', 'all');
 	wp_enqueue_style( 'estilos_base' );
+	
+	// Estilos de los Sliders
+	wp_register_style( 'estilos_slider', get_template_directory_uri() . '/js/splide/dist/css/splide.min.css', true, '1.0.0', 'all');
+	wp_enqueue_style( 'estilos_slider' );
+	wp_register_style( 'estilos_slider2', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-default.min.css', true, '1.0.0', 'all');
+	wp_enqueue_style( 'estilos_slider2' );
+/* 	wp_register_style( 'estilos_slider3', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-sea-green.min.css', true, '1.0.0', 'all');
+	wp_enqueue_style( 'estilos_slider3' );
+	wp_register_style( 'estilos_slider4', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-skyblue.min.css', true, '1.0.0', 'all');
+	wp_enqueue_style( 'estilos_slider4' ); */
 }
 add_action( 'wp_enqueue_scripts', 'losScripts' );
 

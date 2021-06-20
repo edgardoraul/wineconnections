@@ -23,6 +23,8 @@ include "includes/seccion_2.php";
 /* Los paneles con imágenes y texto - Sección 3: Imágenes con texto intercambiadas */
 include "includes/seccion_3.php";
 
+/* Los sliders de las marcas de los auspiciantes */
+include "includes/seccion_4.php";
 
 get_footer();
 
