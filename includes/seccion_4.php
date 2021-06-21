@@ -5,8 +5,9 @@
 			As seen of:
 		</h3>
 	</header>
-	<div class="main__seccion4__articulo__contenido slider splide" id="splide1">
-		<div class="splide__slider">
+	<div class="main__seccion4__articulo__contenido slider splide">
+	<div class="splide__track">
+		<div class="splide__list">
 	
 
 <?php
@@ -41,7 +42,8 @@ else { ?>
 		
 	<?php }
 }
-;?>
+;?>		
+			</div>
 		</div>
 	</div>
 </article>

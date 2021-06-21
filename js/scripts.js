@@ -392,16 +392,11 @@ function cargarScripts()
 
 
 	/* El desarrollo y activación de los sliders */
-	/* const elms = document.getElementsByClassName( 'splide' );
-	for ( var i = 0, len = elms.length; i < len; i++ )
-	{
-		new Splide( elms[ i ] ).mount();
-		console.log(elms[ i ]);
-	} */
-	new Splide( '#splide1', {
-		type   : 'loop',
+	new Splide( '.splide', {
+		type: 'loop',
 		perPage: 3,
 		autoplay: true,
-		interval: 1000
-	} );
+		interval: 3000,
+		height: 100
+	} ).mount();
 }

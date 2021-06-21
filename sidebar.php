@@ -22,7 +22,7 @@
 					<label class="formulario__label" for="search">
 						<input type="search" name="search" id="search" />
 						<button type="submit" role="button" class="formulario__label__boton">
-							<i class="icon-search1"></i>
+							<i class="icomoon icon-search1"></i>
 						</button>
 					</label>
 				</form>
@@ -38,7 +38,7 @@
 						</div>
 						<div class="sidebar__searchForm__boton">
 							<button role="button" class="sidebar__searchForm__boton">
-								<i class="icon-search1"></i>
+								<i class="icomoon icon-search1"></i>
 							</button>
 						</div>
 						<div class="sidebar__searchForm__boton">
@@ -141,4 +141,8 @@
 					</div>
 				</aside>
 			</div>
-		
+		<?php 
+			if ( is_active_sidebar( 'blog-sidebar-right' ) ) :
+				dynamic_sidebar( 'blog-sidebar-right' );
+			endif;
+		?>
