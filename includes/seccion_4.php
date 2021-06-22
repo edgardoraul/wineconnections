@@ -5,7 +5,7 @@
 			As seen of:
 		</h3>
 	</header>
-	<div class="main__seccion4__articulo__contenido slider splide">
+	<div class="main__seccion4__articulo__contenido splide">
 	<div class="splide__track">
 		<div class="splide__list">
 	

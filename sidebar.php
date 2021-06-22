@@ -140,9 +140,13 @@
 						</form>
 					</div>
 				</aside>
-			</div>
 		<?php 
 			if ( is_active_sidebar( 'blog-sidebar-right' ) ) :
 				dynamic_sidebar( 'blog-sidebar-right' );
 			endif;
+
+			if ( is_active_sidebar( 'footer-sidebar-left' ) ) :
+				dynamic_sidebar( 'footer-sidebar-left' );
+			endif;
 		?>
+			</div>

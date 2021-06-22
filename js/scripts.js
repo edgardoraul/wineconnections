@@ -391,12 +391,27 @@ function cargarScripts()
 
 
 
-	/* El desarrollo y activación de los sliders */
-	new Splide( '.splide', {
-		type: 'loop',
-		perPage: 3,
-		autoplay: true,
-		interval: 3000,
-		height: 100
-	} ).mount();
+	/* El desarrollo y activación de los sliders de las marcas */
+	if( document.querySelector(".splide") )
+	{
+		const sliderMarcas = new Splide( '.splide', {
+			type: 'loop',
+			perPage: 5,
+			breakpoints: {
+				720: {
+					perPage: 3,
+				},
+				500: {
+					perPage: 1,
+					height: 150
+				}
+			},
+			autoplay: true,
+			interval: 3000,
+			height: 100,
+			gap: 8,
+			speed: 1000
+		} );
+		sliderMarcas.mount();
+	}
 }

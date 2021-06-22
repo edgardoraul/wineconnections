@@ -1757,13 +1757,13 @@ strong {
         vertical-align: middle; }
 .main__seccion4__articulo {
   align-content: center;
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
   overflow: hidden; }
   @media all and (min-width: 720px) {
     .main__seccion4__articulo {
+      align-items: center;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
       flex-flow: row nowrap; }
       .main__seccion4__articulo__header {
         flex: 1 1 auto; }
