@@ -49,11 +49,11 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 			<?php echo get_the_content();?>
 			</div>
 			<div class="main__seccion1__articulo__contenedor__accion">
-				<a href="#<?php echo $next_post_id;?>" class="boton">
+				<!-- <a href="#<?php echo $next_post_id;?>" class="boton">
 					<?php _e('Siguiente ', 'wineconnections');?>
 					<i class="separador"></i>
 					<i class="icomoon icon-forward"></i>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</article>
@@ -72,11 +72,11 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 				Suscipit quod iure laboriosam maiores nemo similique illum aperiam omnis? Reprehenderit sint repudiandae accusamus ipsum ducimus aut voluptates velit fugit doloribus. Libero!
 			</div>
 			<div class="main__seccion1__articulo__contenedor__accion">
-				<a href="#2" class="boton">
+				<!-- <a href="#2" class="boton">
 					Get Journeys
 					<i class="separador"></i>
 					<i class="icomoon icon-forward"></i>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</article>
@@ -86,5 +86,3 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 
 	</div>
 </section>
-
-?>

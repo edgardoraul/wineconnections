@@ -18,7 +18,7 @@
 				
 				?>
 				</h1>
-				<form class="encabezado__formulario formulario"  action="<?php echo home_url( '/' );?>" method="get" role="search">
+				<form class="woocommerce-product-search encabezado__formulario formulario"  action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="search">
 					<label class="formulario__label" for="search">
 						<input type="search" name="search" id="search" />
 						<button type="submit" role="button" class="formulario__label__boton">
