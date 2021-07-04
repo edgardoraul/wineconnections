@@ -414,4 +414,19 @@ function cargarScripts()
 		} );
 		sliderMarcas.mount();
 	}
+
+	/* El desarrollo del slider de los productos */
+	if( document.querySelector(".woocommerce-product-gallery__wrapper") )
+	{
+		const woocommerceProductGallery = new Splide( '.woocommerce-product-gallery__wrapper', {
+			type: 'loop',
+			perPage: 1,
+			autoplay: true,
+			interval: 3000,
+			height: 'auto',
+			speed: 1000
+		} );
+		//woocommerceProductGallery.mount();
+	}
+
 }

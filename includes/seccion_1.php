@@ -22,8 +22,10 @@ $query_custom_post_type_principales = new WP_Query( $args );
 	<div class="main__seccion1 izquierda">
 		
 		<?php // The Loop
-if ( $query_custom_post_type_principales->have_posts() ) {
-	while ( $query_custom_post_type_principales->have_posts() ) {
+if ( $query_custom_post_type_principales->have_posts() )
+{
+	while ( $query_custom_post_type_principales->have_posts() )
+	{
 		$query_custom_post_type_principales->the_post();
 		$imagen = get_the_post_thumbnail_url( get_the_ID(), 'custom-thumb-600-x' );
 		$next_post = get_next_post();
@@ -31,7 +33,9 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 		if ( is_a( $next_post , 'WP_Post' ) )
 		{
 			$next_post_id = $next_post->ID;
-		} else {
+		}
+		else
+		{
 			$next_post_id = get_the_ID();
 		}
 		// do something
@@ -82,7 +86,10 @@ if ( $query_custom_post_type_principales->have_posts() ) {
 	</article>
 
 
-<?php };?>
+<?php };
+	// Restore original Post Data
+	wp_reset_postdata();
+?>
 
 	</div>
 </section>

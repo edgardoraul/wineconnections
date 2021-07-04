@@ -11,6 +11,9 @@
 	@media all and ( min-width: $tablet )
 		max-width: 100%
 		justify-content: stretch
+	
+	.onsale
+		display: none
 
 .card1
 	border: 1px solid $color_negro
@@ -45,7 +48,7 @@
 		max-width: 24.25%
 	
 	&__figura
-		&__titulo
+		&__titulo	
 			padding: $rem * 0.5
 			font-family: $fuente_titulo
 			font-weight: 900
@@ -78,7 +81,7 @@
 					vertical-align: baseline
 
 
-	&__atrib
+	&__atrib, .woocommerce-Price-amount, .amount
 		align-items: center
 		font-size: $rem
 		display: flex
@@ -96,6 +99,6 @@
 			flex: 1 1 auto
 			font-size: $rem * 1.25
 		
-		&__precio
+		&__precio, .price
 			text-decoration: dashed
 			flex: 1 1 auto

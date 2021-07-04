@@ -133,6 +133,9 @@
 									</div>
 								</label>
 							</div>
+                            <div class="widget__contenido">
+                            <?php do_action( 'woocommerce_sidebar' );?>
+                            </div>
 							<div class="subtitulo">
 								<button type="reset" role="button" class="boton boton--chico boton--advertencia">Reset</button>
 								<button type="submit" role="button" class="boton boton--chico boton--transparente">Done</button>
@@ -140,13 +143,13 @@
 						</form>
 					</div>
 				</aside>
-		<?php 
-			if ( is_active_sidebar( 'blog-sidebar-right' ) ) :
-				dynamic_sidebar( 'blog-sidebar-right' );
-			endif;
+			<?php 
+				if ( is_active_sidebar( 'blog-sidebar-right' ) ) :
+					dynamic_sidebar( 'blog-sidebar-right' );
+				endif;
 
-			if ( is_active_sidebar( 'footer-sidebar-left' ) ) :
-				dynamic_sidebar( 'footer-sidebar-left' );
-			endif;
-		?>
+				if ( is_active_sidebar( 'footer-sidebar-left' ) ) :
+					dynamic_sidebar( 'footer-sidebar-left' );
+				endif;
+			?>
 			</div>

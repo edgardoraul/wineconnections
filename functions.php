@@ -22,10 +22,7 @@ function woocommerce_support()
 {
 	add_theme_support( 'woocommerce' );
 }
-/* if (class_exists('Woocommerce'))
-{
-	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-} */
+
 
 /********* FUNCIONES GENERALES DE LA PLANTILLA *******/
 // Agregando las fuentes de Google
@@ -57,10 +54,6 @@ function losScripts()
 	wp_enqueue_style( 'estilos_slider' );
 	wp_register_style( 'estilos_slider2', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-default.min.css', true, '1.0.0', 'all');
 	wp_enqueue_style( 'estilos_slider2' );
-/* 	wp_register_style( 'estilos_slider3', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-sea-green.min.css', true, '1.0.0', 'all');
-	wp_enqueue_style( 'estilos_slider3' );
-	wp_register_style( 'estilos_slider4', get_template_directory_uri() . '/js/splide/dist/css/themes/splide-skyblue.min.css', true, '1.0.0', 'all');
-	wp_enqueue_style( 'estilos_slider4' ); */
 }
 add_action( 'wp_enqueue_scripts', 'losScripts' );
 
